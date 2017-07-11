@@ -63,9 +63,9 @@ More examples of special function transforms can be found in `test` folder as we
 
 [5] Y. Li, H. Yang, E. R. Martin, K. L. Ho, and L. Ying. Butterfly Factorization. Multiscale Modeling & Simulation, 13(2):714–732, 2015. [PDF][bf]
 
-[6] Y. Li, H. Yang, and L. Ying. Multidimensional butterfly factorization. Submitted. [PDF][mbf]
+[6] Y. Li, H. Yang, and L. Ying. Multidimensional butterfly factorization. Applied and Computational Harmonic Analysis, in press. [PDF][mbf]
 
-[7] Y. Li and H. Yang. Interpolative Butterfly Factorization. Submitted. [PDF][ibf]
+[7] Y. Li and H. Yang. Interpolative Butterfly Factorization. SIAM J. Sci. Comput., 39(2), A503–A531, 2017. [PDF][ibf]
 
 [ba]: http://ieeexplore.ieee.org/document/511816/
 [pbf]: http://epubs.siam.org/doi/abs/10.1137/080734339
