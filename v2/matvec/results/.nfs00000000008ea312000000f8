@@ -1,0 +1,112 @@
+------------------------------------------
+N                 : 1024
+NG                :    6
+mR                :   20
+Tolerance         : 1.000e-12
+BF Error          : 1.932e-02
+All Error         : 1.229e-12
+Phase Error       : 1.229e-12
+Amplitude Error   : 1.226e-15
+Direct Time       : 1.089e-01 s
+Running Time      : 4.860e-02 mins
+Factorization Time: 4.852e-02 mins
+Reconstruct Time  : 1.996e-02 mins
+Applying Time     : 4.952e-03 s
+------------------------------------------
+
+------------------------------------------
+N                 : 1024
+NG                :    6
+mR                :   20
+Tolerance         : 1.000e-12
+BF Error          : 1.828e-02
+All Error         : 1.101e-12
+Phase Error       : 1.101e-12
+Amplitude Error   : 1.109e-15
+Direct Time       : 8.044e-02 s
+Running Time      : 4.212e-02 mins
+Factorization Time: 4.205e-02 mins
+Reconstruct Time  : 1.209e-02 mins
+Applying Time     : 4.470e-03 s
+------------------------------------------
+
+------------------------------------------
+N                 : 1024
+NG                :    6
+mR                :   20
+Tolerance         : 1.000e-12
+BF Error          : 1.713e-02
+All Error         : 2.116e-12
+Phase Error       : 2.116e-12
+Amplitude Error   : 1.229e-15
+Direct Time       : 7.941e-02 s
+Running Time      : 4.286e-02 mins
+Factorization Time: 4.279e-02 mins
+Reconstruct Time  : 1.223e-02 mins
+Applying Time     : 4.032e-03 s
+------------------------------------------
+
+------------------------------------------
+N                 : 1024
+NG                :    6
+mR                :   20
+Tolerance         : 1.000e-12
+BF Error          : 1.877e-02
+All Error         : 5.324e-12
+Phase Error       : 5.324e-12
+Amplitude Error   : 1.223e-15
+Direct Time       : 8.138e-02 s
+Running Time      : 4.119e-02 mins
+Factorization Time: 4.116e-02 mins
+Reconstruct Time  : 1.215e-02 mins
+Applying Time     : 1.896e-03 s
+------------------------------------------
+
+------------------------------------------
+N                 : 1024
+NG                :    8
+mR                :   20
+Tolerance         : 1.000e-12
+BF Error          : 7.034e-04
+All Error         : 2.076e-12
+Phase Error       : 2.076e-12
+Amplitude Error   : 1.226e-15
+Direct Time       : 7.242e-02 s
+Running Time      : 4.562e-02 mins
+Factorization Time: 4.556e-02 mins
+Reconstruct Time  : 1.092e-02 mins
+Applying Time     : 3.301e-03 s
+------------------------------------------
+
+------------------------------------------
+N                 : 1024
+NG                :   10
+mR                :   20
+Tolerance         : 1.000e-12
+BF Error          : 1.164e+64
+All Error         : 2.274e-12
+Phase Error       : 2.274e-12
+Amplitude Error   : 1.221e-15
+Direct Time       : 7.958e-02 s
+Running Time      : 4.639e-02 mins
+Factorization Time: 4.637e-02 mins
+Reconstruct Time  : 1.234e-02 mins
+Applying Time     : 1.241e-03 s
+------------------------------------------
+
+------------------------------------------
+N                 : 1024
+NG                :   12
+mR                :   20
+Tolerance         : 1.000e-12
+BF Error          : 6.748e+77
+All Error         : 2.743e-12
+Phase Error       : 2.743e-12
+Amplitude Error   : 1.111e-15
+Direct Time       : 8.047e-02 s
+Running Time      : 4.906e-02 mins
+Factorization Time: 4.904e-02 mins
+Reconstruct Time  : 1.099e-02 mins
+Applying Time     : 1.497e-03 s
+------------------------------------------
+
