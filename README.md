@@ -74,7 +74,7 @@ More examples of special function transforms can be found in `test` folder as we
 
 [9] Q. Pang, K. L. Ho, and H. Yang. Interpolative Decomposition Butterfly Factorization. Preprint, 2018. [PDF][idbf]
 
-[10] X. S. Li, Y. Liu, and H. Yang. A Hierarchical Butterfly LU Preconditioner for Two-Dimensional Electromagnetic Scattering Problems Involving Open Surfaces. Preprint, 2019. [PDF][HIBLU]
+[10] Y. Liu, and H. Yang. A Hierarchical Butterfly LU Preconditioner for Two-Dimensional Electromagnetic Scattering Problems Involving Open Surfaces. Preprint, 2019. [PDF][HIBLU]
 
 [ba]: https://onlinelibrary.wiley.com/doi/abs/10.1002/mop.4650071707
 [pbf]: http://epubs.siam.org/doi/abs/10.1137/080734339
@@ -85,7 +85,7 @@ More examples of special function transforms can be found in `test` folder as we
 [mbf]: http://arxiv.org/abs/1509.07925
 [uni]: https://arxiv.org/abs/1803.04128
 [idbf]: https://arxiv.org/abs/1809.10573
-[HIBLU]: https://arxiv.org/abs/1803.04128
+[HIBLU]: https://arxiv.org/abs/1901.11371
 
 4 COPY RIGHT
 
