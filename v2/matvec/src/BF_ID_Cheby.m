@@ -1,6 +1,9 @@
 function [T,idx,sk,rd] = BF_ID_Cheby(fun,x,k,grid,rank,tol,r_or_c,opt)
-% Compute ID approximation A(:,rd) ~ A(:,sk)*T. 
-% A =fun(x,k)
+% Compute ID approximation A(:,rd) ~ A(:,sk)*T when r_or_c = 'c'
+% where A = fun(x,k).
+% Compute ID approximation A(rd,:) ~ T*A(sk,:) when r_or_c = 'r'
+%
+% grid = chebyshev grid points adaptive to the domain of x or k
 % The precision is specified by tol and the rank is given by 'rank'; 
 % r_or_c specify row ID or column ID
 % opt - whether use adaptive rank or fix rank
@@ -38,6 +41,7 @@ switch r_or_c
         Asub = fun(px,k);
         
         [~,R,E] = qr(Asub,0);
+        
         if opt > 0
             if xlen*klen > 0
                 rr = find( abs(diag(R)/R(1)) > tol, 1, 'last');
