@@ -9,5 +9,6 @@ file_path = file_path(1:(tmp(end)-1));
 addpath(genpath([file_path 'denseSolver']));
 addpath(genpath([file_path 'external']));
 addpath(genpath([file_path 'matvec']));
+addpath(genpath([file_path 'specFun']));
 
 end
