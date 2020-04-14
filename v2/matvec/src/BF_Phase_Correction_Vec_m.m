@@ -4,19 +4,14 @@
 
 % O(N log N) operation and memory complexity.
 
-function U = BF_Phase_Correction_Vec_m(U,P,disPosu,tau)
+function U = BF_Phase_Correction_Vec_m(U,P,tau)
 % U - phase vector for recovery
 % P - recovery path matrix
-% disPosu - discontinuity locations of U
 % tau - scale value of phase vector
 
-N = numel(U);
-
-for c = 1 : N-1
+for c = 1 : size(P,1)
     bg = P(c,1); ed = P(c,2);
-    if ~ismember(ed,disPosu)
-        U(ed) = U(ed) - round((U(ed)-U(bg))/tau)*tau;
-    end
+    U(ed) = U(ed) - round((U(ed)-U(bg))/tau)*tau;
 end
 
 end

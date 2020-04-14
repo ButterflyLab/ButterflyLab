@@ -4,45 +4,47 @@
 
 clear; clc;
 close all hidden;
+rng('shuffle');
 
 % -----input-----
-datacase = 'Hel'; %'2D' '3D' 'Hel'
+datacase = '2D'; %'2D' '3D' 'Hel'
 tol = 1e-9;
 datatry = 10;
 nn = 8;
+tau = 1/4;
 % ---------------
 
 tstart = tic;
 
 switch datacase
     case '2D'
-        Nsq = [64, 16.^(2:6)];
-        mR = 10;
+        Nsq = [16^2, 16.^(2:6)];
+        mR = 20;
         rk = 30;
     case '3D'
-        Nsq = [1024, 8.^(4:7)];
-        mR = 5;
+        Nsq = [8^4, 8.^(4:7)];
+        mR = 3;
         rk = 80;
     case 'Hel'
-        refinement = [3, 4:1:10];
+        refinement = [4, 4:1:8];
         Nsq = 10*4.^(refinement-1);
-        mR = 100;
-        rk = 30;
+        mR = 50;
+        rk = 50;
 end
 
-fid = fopen(['./results/' datacase '.log'],'a+');
-fprintf(fid,['\n\n Starting from ',char(datetime('now')),'\n']);
-fprintf(fid,[' epsilon: ',num2str(tol),'\t', ...
-    'r_epsilon: ',num2str(mR),'\t','k_epsilon: ',num2str(rk),'\n']);
-fprintf(fid,['N & BF Error & Ker Error & ',...
-    'Rec Time & Fac Time & App Time & Dir/App Time\n']);
+startT = char(datetime('now'));
+fid = fopen(['./results/' datacase '_' startT '.log'],'a+');
+fprintf(fid, ['\n\n Starting from ', startT, '\n']);
+fprintf(fid, [' case: ', datacase, '\tepsilon: ', num2str(tol), ...
+    '\tr_epsilon: ', num2str(mR), '\tk_epsilon: ', num2str(rk), '\n']);
+fprintf(fid, ['N & BF Error & Ker Error & Dis Row & Dis Col & '...
+    'Ord Time & Rec Time & Fac Time & App Time & Dir/App Time\n']);
 
 cm = length(Nsq);
-LR = zeros(cm,datatry); Err_K = LR; Err_bf = LR;
+LR = zeros(cm, datatry); Dis_r = LR; Dis_c = LR; Err_K = LR; Err_bf = LR;
 T_order = LR; T_rec = LR; T_fac = LR; T_app = LR; T_dir = LR;
 
 proc = 0;
-mp = 100/datatry+0.1;
 fprintf('\n');
 
 for c = 1 : cm
@@ -79,8 +81,8 @@ for c = 1 : cm
                 N = min(Nx, Np);
                 Nsq(c) = N;
                 % Kernal function
-                k = sqrt(N)/6;
-                fun = @(xx,yy) fun_kernal_hel(k,xx,yy);
+                h = sqrt(N)/10;
+                fun = @(xx,yy) fun_kernal_hel(h,xx,yy);
         end
 
         % Kernal function
@@ -89,8 +91,7 @@ for c = 1 : cm
         
         proc = ((c-1)*datatry+i-1)/datatry/cm;
         fprintf(['%2.2f%% \t N = %i \t %2.0f/%2.0f \t ',...
-            char(datetime('now')),'\n'], ...
-            proc*100, Nsq(c), i, datatry);
+            char(datetime('now')),'\n'], proc*100, Nsq(c), i, datatry);
         
         % Ordering
         tord = tic;
@@ -99,14 +100,15 @@ for c = 1 : cm
 
         % Recovery
         trec = tic;
-        [U,S,V] = MIDBF_Lowrank_Phase(N,N,fn,fnt,tol,mR,mR,1/4*pi,P1,P2);
+        [U,S,V,Dr,Dc] = MIDBF_Lowrank_Phase(N,N,fn,fnt,tol,mR,mR,tau*2*pi,P1,P2);
         T_rec(c,i) = toc(trec);
+        Dis_r(c,i) = Dr; Dis_c(c,i) = Dc;
         LR(c,i) = sum(diag(S)>tol*S(1));
         
         % Error
         NC = min(256, N);
-        pos1 = round(rand(1,NC)*(N-NC))+(1:NC);
-        pos2 = round(rand(1,NC)*(N-NC))+(1:NC);
+        pos1 = BF_RandSample(N, NC);
+        pos2 = BF_RandSample(N, NC);
         K = fun(Sx(pos1,:), Sy(pos2,:));
         Err_K(c,i) = norm(exp(1i*U(pos1,:)*S*V(pos2,:)')-K)/norm(K);
         
@@ -125,16 +127,20 @@ for c = 1 : cm
         T_dir(c,i) = toc;
         T_dir(c,i) = T_dir(c,i) * N / NC;
         
+        save(['./results/' datacase '_' startT '.mat'],'Nsq','Err_bf','Err_K',...
+        'Dis_r','Dis_c','T_order','T_rec','T_fac','T_app','T_dir','LR');
+
+        MIDBF_scaling([datacase '_' startT], 2, 2, 0)
+
     end
     
-    fprintf(fid, '%i & %.2e & %.2e & %.2e & %.2e & %.2e & %.2e\n', ...
-        Nsq(c),trimmean(Err_bf(c,:),mp),trimmean(Err_K(c,:),mp),...
-        trimmean(T_order(c,:)+T_rec(c,:),mp),trimmean(T_fac(c,:),mp),...
-        trimmean(T_app(c,:),mp),trimmean(T_dir(c,:)./T_app(c,:),mp));
+    fprintf(fid, ['%i & %.2e & %.2e & %.1f & %.1f & %.2e & %.2e & ', ...
+        '%.2e & %.2e & %.2e \\\\\n'], Nsq(c), BF_trimdata(Err_bf(c,:)), ...
+        BF_trimdata(Err_K(c,:)), mean(Dis_r(c,:)), mean(Dis_c(c,:)), ...
+        BF_trimdata(T_order(c,:)), BF_trimdata(T_rec(c,:)), ...
+        BF_trimdata(T_fac(c,:)), BF_trimdata(T_app(c,:)), ...
+        BF_trimdata(T_dir(c,:)./T_app(c,:)));
 end
-
-save(['./results/' datacase '.mat'],'Nsq','Err_bf','Err_K','T_order',...
-    'T_rec','T_fac','T_app','T_dir','LR','mp');
 
 T = toc(tstart) / 60;
 fprintf(fid, ' Running time = %.2f min\n', T);

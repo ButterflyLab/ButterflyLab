@@ -1,4 +1,4 @@
-function F = BF_IDBF(fun_org,xx,kk,nn,rk,tol,rand_or_cheb,tt,opt)
+function F = BF_IDBF(fun_org,xx,kk,nn,rk,tol,rand_or_cheb,tt,opt,is_location)
 % fun_org - function handle representing the BF matrix
 % xx - row index set
 % kk - column index set
@@ -20,6 +20,7 @@ function F = BF_IDBF(fun_org,xx,kk,nn,rk,tol,rand_or_cheb,tt,opt)
 if nargin < 7, rand_or_cheb = 'rand'; end
 if nargin < 8, tt = 5; end
 if nargin < 9, opt = 1; end % 1: adaptive rank; 0: exact rank=rk
+if nargin < 10, is_location = 1; end
 %assert(mod(N2,1) == 0 && mod(n2,1) == 0)  % check integer input
 if rk > 0
     isRk = 1; % use rk in the low-rank approximation
@@ -33,8 +34,6 @@ else
     isTol = 0;
 end
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Dim = size(xx,2);
 xbox = zeros(2,Dim);
@@ -45,6 +44,9 @@ Nx = Nx^(1/Dim)*ones(1,Dim);
 Nk = Nk^(1/Dim)*ones(1,Dim);
 npx = 2.^round(log2(sqrt(Nx)));
 npk = 2.^round(log2(sqrt(Nk)));
+%% 
+npx = min(npx,npk); npk = min(npx,npk);
+%% 
 xbox(1,:) = min(xx);
 xbox(2,:) = max(xx)+(max(xx)-min(xx))./Nx;
 kbox(1,:) = min(kk);
@@ -52,7 +54,6 @@ kbox(2,:) = max(kk)+(max(kk)-min(kk))./Nk;
 % make sure that the smallest dimension of the low-rank submatrices is
 % larger than max(8,r)
 levels = max(0,min(floor(log2([npx npk])-max(3,ceil(log2(nn))))));
-Dim = size(xx,2);
 
 xxboxidx = zeros(size(xx));
 npxx = npx*2^levels;
@@ -61,6 +62,7 @@ for i = 1:Dim
     edges = linspace(xbox(1,i),xbox(2,i),npxx(i)+1);
     [~,xxboxidx(:,i)] = histc(xx(:,i),edges);
 end
+[~, ~, xxboxidx] = unique(xxboxidx, 'stable');
 [xxboxidx,xxidx] = sortrows(xxboxidx,Dim:-1:1);
 [xxC,xxIA,~] = unique(xxboxidx,'rows','stable');
 xxC = [xxC;zeros(1,size(xxC,2))];
@@ -90,6 +92,7 @@ for i = 1:Dim
     edges = linspace(kbox(1,i),kbox(2,i),npkk(i)+1);
     [~,kkboxidx(:,i)] = histc(kk(:,i),edges);
 end
+[~, ~, kkboxidx] = unique(kkboxidx, 'stable');
 [kkboxidx,kkidx] = sortrows(kkboxidx,Dim:-1:1);
 [kkC,kkIA,~] = unique(kkboxidx,'rows','stable');
 kkC = [kkC;zeros(1,size(kkC,2))];
@@ -118,7 +121,11 @@ end
 %n  = 2^n2;              % leaf block size
 %L  = floor((N2-n2)/2);  % number of compression levels
 %nb = N/n;               % number of leaf blocks (= # to compress at each level)
-fun = @(i,j)fun_org(xx(i,:),kk(j,:));
+if is_location == 0
+    fun = fun_org;
+else
+    fun = @(i,j)fun_org(xx(i,:),kk(j,:));
+end
 N = size(xx,1);
 nb = prod(npxx);
 L = floor(log2(nb)/2);
@@ -188,78 +195,86 @@ for l = 1:L  % loop from leaf level up
     
     % row compression
     for p = 1:np                                 % loop over partitions
-        ci = [cidx{(p-1)*nbp+1:p*nbp,p}];        % complementary cols
-        for b = 1:nb                             % loop over blocks
-            ri = ridx{b,p};                      % rows to compress
-            if ~cheat || b == 1
-                if isRk & isTol
-                    switch rand_or_cheb
-                        case 'cheb'
-                            [T,sk,~,rd] = BF_ID_Cheby(fun,ri(:),ci(:),grid,rk,tol,'r',opt);
-                        case 'rand'
-                            [T,sk,~,rd] = BF_ID_rand(fun,ri(:),ci(:),rk,tol,'r',tt,opt);
-                    end
-                elseif isRk
-                    switch rand_or_cheb
-                        case 'cheb'
-                            [T,sk,~,rd] = BF_ID_Cheby(fun,ri(:),ci(:),grid,rk,1e-15,'r',opt);
-                        case 'rand'
-                            [T,sk,~,rd] = BF_ID_rand(fun,ri(:),ci(:),rk,1e-15,'r',tt,opt);
-                    end
-                else
-                    switch rand_or_cheb
-                        case 'cheb'
-                            grid = BF_Chey_grid(size(ri(:),1));
-                            [T,sk,~,rd] = BF_ID_Cheby(fun,ri(:),ci(:),grid,size(ri(:),1),tol,'r',opt);
-                        case 'rand'
-                            [T,sk,~,rd] = BF_ID_rand(fun,ri(:),ci(:),size(ri(:),1),tol,'r',tt,opt);
+        for b1 = 1:np
+            ci = [cidx{(p-1)*nbp+1:p*nbp,b1}];  % complementary cols
+            for b2 = 1:nbp                    % loop over blocks
+                b = (b1-1)*nbp + b2;
+                ri = ridx{b,p};                      % rows to compresst
+                if ~cheat || b == 1
+                    if isRk && isTol
+                        switch rand_or_cheb
+                            case 'cheb'
+                                [T,sk,~,rd] = BF_ID_Cheby(fun,ri(:),ci(:),grid,rk,tol,'r',opt);
+                            case 'rand'
+                                [T,sk,~,rd] = BF_ID_rand(fun,ri(:),ci(:),rk,tol,'r',tt,opt);
+                        end
+                    elseif isRk
+                        switch rand_or_cheb
+                            case 'cheb'
+                                [T,sk,~,rd] = BF_ID_Cheby(fun,ri(:),ci(:),grid,rk,1e-15,'r',opt);
+                            case 'rand'
+                                [T,sk,~,rd] = BF_ID_rand(fun,ri(:),ci(:),rk,1e-15,'r',tt,opt);
+                        end
+                    else
+                        switch rand_or_cheb
+                            case 'cheb'
+                                grid = BF_Chey_grid(size(ri(:),1));
+                                [T,sk,~,rd] = BF_ID_Cheby(fun,ri(:),ci(:),grid,size(ri(:),1),tol,'r',opt);
+                            case 'rand'
+                                [T,sk,~,rd] = BF_ID_rand(fun,ri(:),ci(:),size(ri(:),1),tol,'r',tt,opt);
+                        end
                     end
                 end
+                T(T==0) = eps;
+                F.data{l}(b,p).ri  = ri;             % store row block indices
+                F.data{l}(b,p).rsk = sk;             % store skeleton indices
+                F.data{l}(b,p).rrd = rd;             % store redundant indices
+                F.data{l}(b,p).rT  = T;              % store interpolation matrix
+                %  F.data{l}(b,p).rT  = T';              % store interpolation matrix
+                ridx{b,p} = ri(sk);                  % restrict to skeletons
             end
-            F.data{l}(b,p).ri  = ri;             % store row block indices
-            F.data{l}(b,p).rsk = sk;             % store skeleton indices
-            F.data{l}(b,p).rrd = rd;             % store redundant indices
-            F.data{l}(b,p).rT  = T;              % store interpolation matrix
-            %  F.data{l}(b,p).rT  = T';              % store interpolation matrix
-            ridx{b,p} = ri(sk);                  % restrict to skeletons
         end
     end
     
     % column compression
     for p = 1:np                                 % loop over partitions
-        ri = [ridx{(p-1)*nbp+1:p*nbp,p}];        % complementary rows
-        for b = 1:nb                             % loop over blocks
-            ci = cidx{b,p};                      % cols to compress
-            if ~cheat || b == 1
-                if isRk & isTol
-                    switch rand_or_cheb
-                        case 'cheb'
-                            [T,sk,~,rd] = BF_ID_Cheby(fun,ri(:),ci(:),grid,rk,tol,'c',opt);
-                        case 'rand'
-                            [T,sk,~,rd] = BF_ID_rand(fun,ri(:),ci(:),rk,tol,'c',tt,opt);
-                    end
-                elseif isRk
-                    switch rand_or_cheb
-                        case 'cheb'
-                            [T,sk,~,rd] = BF_ID_Cheby(fun,ri(:),ci(:),grid,rk,1e-15,'c',opt);
-                        case 'rand'
-                            [T,sk,~,rd] = BF_ID_rand(fun,ri(:),ci(:),rk,1e-15,'c',tt,opt);
-                    end
-                else
-                    switch rand_or_cheb
-                        case 'cheb'
-                            grid = BF_Chey_grid(size(ci(:),1));
-                            [T,sk,~,rd] = BF_ID_Cheby(fun,ri(:),ci(:),grid,size(ci(:),1),tol,'c',opt);
-                        case 'rand'
-                            [T,sk,~,rd] = BF_ID_rand(fun,ri(:),ci(:),size(ci(:),1),tol,'c',tt,opt);
+        for b1 = 1:np
+            ri = [ridx{(p-1)*nbp+1:p*nbp,b1}];    % complementary rows
+            for b2 = 1:nbp                    % loop over blocks       
+                b = (b1-1)*nbp + b2;
+                ci = cidx{b,p};                      % cols to compress
+                if ~cheat || b == 1
+                    if isRk && isTol
+                        switch rand_or_cheb
+                            case 'cheb'
+                                [T,sk,~,rd] = BF_ID_Cheby(fun,ri(:),ci(:),grid,rk,tol,'c',opt);
+                            case 'rand'
+                                [T,sk,~,rd] = BF_ID_rand(fun,ri(:),ci(:),rk,tol,'c',tt,opt);
+                        end
+                    elseif isRk
+                        switch rand_or_cheb
+                            case 'cheb'
+                                [T,sk,~,rd] = BF_ID_Cheby(fun,ri(:),ci(:),grid,rk,1e-15,'c',opt);
+                            case 'rand'
+                                [T,sk,~,rd] = BF_ID_rand(fun,ri(:),ci(:),rk,1e-15,'c',tt,opt);
+                        end
+                    else
+                        switch rand_or_cheb
+                            case 'cheb'
+                                grid = BF_Chey_grid(size(ci(:),1));
+                                [T,sk,~,rd] = BF_ID_Cheby(fun,ri(:),ci(:),grid,size(ci(:),1),tol,'c',opt);
+                            case 'rand'
+                                [T,sk,~,rd] = BF_ID_rand(fun,ri(:),ci(:),size(ci(:),1),tol,'c',tt,opt);
+                        end
                     end
                 end
+                T(T==0) = eps;
+                F.data{l}(b,p).ci  = ci;             % store col block indices
+                F.data{l}(b,p).csk = sk;             % store skeleton indices
+                F.data{l}(b,p).crd = rd;             % store redundant indices
+                F.data{l}(b,p).cT  = T;              % store interpolation matrix
+                cidx{b,p} = ci(sk);                  % restrict to skeletons
             end
-            F.data{l}(b,p).ci  = ci;             % store col block indices
-            F.data{l}(b,p).csk = sk;             % store skeleton indices
-            F.data{l}(b,p).crd = rd;             % store redundant indices
-            F.data{l}(b,p).cT  = T;              % store interpolation matrix
-            cidx{b,p} = ci(sk);                  % restrict to skeletons
         end
     end
 end

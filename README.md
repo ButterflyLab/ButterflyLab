@@ -70,13 +70,13 @@ More examples of special function transforms can be found in `test` folder as we
 
 [7] Y. Li and H. Yang. Interpolative Butterfly Factorization. SIAM J. Sci. Comput., 39(2), A503–A531, 2017. [PDF][ibf]
 
-[8] H. Yang. A Unified Framework for Oscillatory Integral Transform: When to Use NUFFT or Butterfly factorization? Preprint, 2018. [PDF][uni]
+[8] H. Yang. A Unified Framework for Oscillatory Integral Transform: When to Use NUFFT or Butterfly factorization? Journal of Computational Physics, 2019. [PDF][uni]
 
-[9] Q. Pang, K. L. Ho, and H. Yang. Interpolative Decomposition Butterfly Factorization. Preprint, 2018. [PDF][idbf]
+[9] Q. Pang, K. L. Ho, and H. Yang. Interpolative Decomposition Butterfly Factorization. SIAM Journal of Scientific Computing, 2020. [PDF][idbf]
 
-[10] Y. Liu, and H. Yang. A Hierarchical Butterfly LU Preconditioner for Two-Dimensional Electromagnetic Scattering Problems Involving Open Surfaces. Preprint, 2019. [PDF][HIBLU]
+[10] Y. Liu, and H. Yang. A Hierarchical Butterfly LU Preconditioner for Two-Dimensional Electromagnetic Scattering Problems Involving Open Surfaces. Journal of Computational Physics, 2020. [PDF][HIBLU]
 
-[11] Z. Chen, J. Zhang, K. Ho, and H. Yang. Multidimensional Phase Recovery and Interpolative Decomposition Butterfly Factorization. Preprint, 2019. [PDF][MIDBF]
+[11] Z. Chen, J. Zhang, K. Ho, and H. Yang. Multidimensional Phase Recovery and Interpolative Decomposition Butterfly Factorization. Journal of Computational Physics, 2020. [PDF][MIDBF]
 
 [ba]: https://onlinelibrary.wiley.com/doi/abs/10.1002/mop.4650071707
 [pbf]: http://epubs.siam.org/doi/abs/10.1137/080734339
