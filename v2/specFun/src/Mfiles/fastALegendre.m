@@ -69,4 +69,9 @@ t = t(:);
 for cnt = 1:numel(degree)
     [alpha(:,cnt),alphader(:,cnt),vallogp(:,cnt),vallogq(:,cnt),valp(:,cnt),valq(:,cnt)] = fastALegendre_mex(degree(cnt),order,t);
 end
+
+%%
+valp = valp./sqrt(sin(t));
+%%
+
 end

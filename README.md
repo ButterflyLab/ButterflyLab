@@ -78,17 +78,20 @@ More examples of special function transforms can be found in `test` folder as we
 
 [11] Z. Chen, J. Zhang, K. Ho, and H. Yang. Multidimensional Phase Recovery and Interpolative Decomposition Butterfly Factorization. Journal of Computational Physics, 2020. [PDF][MIDBF]
 
+[12] J. Bremer, Z. Chen, and H. Yang. Rapid Application of the Spherical Harmonic Transform via Interpolative Decomposition Butterfly Factorization. Submitted. [PDF][MIDBF]
+
 [ba]: https://onlinelibrary.wiley.com/doi/abs/10.1002/mop.4650071707
 [pbf]: http://epubs.siam.org/doi/abs/10.1137/080734339
 [spF]: http://epubs.siam.org/doi/abs/10.1137/08071291X
 [mba]: http://epubs.siam.org/doi/abs/10.1137/140997658
 [bf]: http://epubs.siam.org/doi/abs/10.1137/15M1007173
-[ibf]: http://arxiv.org/abs/1605.03616
-[mbf]: http://arxiv.org/abs/1509.07925
-[uni]: https://arxiv.org/abs/1803.04128
-[idbf]: https://arxiv.org/abs/1809.10573
-[HIBLU]: https://arxiv.org/abs/1901.11371
-[MIDBF]: https://arxiv.org/abs/1908.09376
+[ibf]: https://epubs.siam.org/doi/abs/10.1137/16M1074941
+[mbf]: https://www.sciencedirect.com/science/article/abs/pii/S1063520317300271
+[uni]: https://www.sciencedirect.com/science/article/pii/S0021999119301615
+[idbf]: https://epubs.siam.org/doi/abs/10.1137/19M1294873?mobileUi=0
+[HIBLU]: https://www.sciencedirect.com/science/article/pii/S002199911930720X
+[MIDBF]: https://www.sciencedirect.com/science/article/pii/S0021999120302011
+[SHT]: https://www.researchgate.net/publication/340859249_Rapid_Application_of_the_Spherical_Harmonic_Transform_via_Interpolative_Decomposition_Butterfly_Factorization?channel=doi&linkId=5ea1028c458515ec3aff1ed2&showFulltext=true
 
 4 COPY RIGHT
 
