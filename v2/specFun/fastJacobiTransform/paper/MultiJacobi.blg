@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: MultiJacobi.aux
+The style file: unsrt.bst
+Database file #1: ref.bib
+Warning--there's a number but no series in hua1963harmonic
+You've used 48 entries,
+            1791 wiz_defined-function locations,
+            750 strings with 10953 characters,
+and the built_in function-call counts, 10187 in all, are:
+= -- 938
+> -- 330
+< -- 6
++ -- 133
+- -- 85
+* -- 690
+:= -- 1589
+add.period$ -- 147
+call.type$ -- 48
+change.case$ -- 34
+chr.to.int$ -- 0
+cite$ -- 49
+duplicate$ -- 444
+empty$ -- 1095
+format.name$ -- 85
+if$ -- 2306
+int.to.chr$ -- 0
+int.to.str$ -- 48
+missing$ -- 60
+newline$ -- 242
+num.names$ -- 47
+pop$ -- 135
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 154
+stack$ -- 0
+substring$ -- 796
+swap$ -- 59
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 90
+width$ -- 50
+write$ -- 519
+(There was 1 warning)

@@ -1,0 +1,17 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Preliminaries}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Approximate SVD via Randomized Sampling}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Non-oscillatory phase and amplitude functions}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Fast Jacobi polynomial transforms}{}% 5
+\BOOKMARK [2][-]{subsection.3.1}{One-dimensional transform and its inverse}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.2}{Two-dimensional transform and its inverse}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.3}{Three-dimensional transform and its inverse}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Numerical results}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Efficiency and Stability}{section.4}% 10
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Comparisons with direct summation}{subsection.4.1}% 11
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Stability}{subsection.4.1}% 12
+\BOOKMARK [2][-]{subsection.4.2}{Comparison of CHEB and RS methods}{section.4}% 13
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Comparisons in the one-dimensional case for a and b in \(-1,1\)}{subsection.4.2}% 14
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Comparisons in the three-dimensional case for a and b in \(-1,1\)}{subsection.4.2}% 15
+\BOOKMARK [2][-]{subsection.4.3}{Performance of fast multi-dimensional transforms}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 17

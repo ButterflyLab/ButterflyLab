@@ -78,7 +78,11 @@ More examples of special function transforms can be found in `test` folder as we
 
 [11] Z. Chen, J. Zhang, K. Ho, and H. Yang. Multidimensional Phase Recovery and Interpolative Decomposition Butterfly Factorization. Journal of Computational Physics, 2020. [PDF][MIDBF]
 
-[12] J. Bremer, Z. Chen, and H. Yang. Rapid Application of the Spherical Harmonic Transform via Interpolative Decomposition Butterfly Factorization. Submitted. [PDF][MIDBF]
+[12] J. Bremer and H. Yang. Fast Algorithms for Jacobi Expansions via Nonoscillatory Phase Functions. IMA Journal of Numerical Analysis, 2019. [PDF][Jacobi]
+
+[13] J. Bremer, Qiyuan. Pang, and H. Yang. Fast Algorithms for Multi-dimensional Jacobi Polynomial Transforms. Applied and Computational Harmonic Analysis, 2020. [PDF][mJacobi]
+
+[14] J. Bremer, Z. Chen, and H. Yang. Rapid Application of the Spherical Harmonic Transform via Interpolative Decomposition Butterfly Factorization. Submitted. [PDF][MIDBF]
 
 [ba]: https://onlinelibrary.wiley.com/doi/abs/10.1002/mop.4650071707
 [pbf]: http://epubs.siam.org/doi/abs/10.1137/080734339
@@ -92,6 +96,8 @@ More examples of special function transforms can be found in `test` folder as we
 [HIBLU]: https://www.sciencedirect.com/science/article/pii/S002199911930720X
 [MIDBF]: https://www.sciencedirect.com/science/article/pii/S0021999120302011
 [SHT]: https://www.researchgate.net/publication/340859249_Rapid_Application_of_the_Spherical_Harmonic_Transform_via_Interpolative_Decomposition_Butterfly_Factorization?channel=doi&linkId=5ea1028c458515ec3aff1ed2&showFulltext=true
+[Jacobi]: https://academic.oup.com/imajna/article/40/3/2019/5442213
+[mJacobi]: https://www.sciencedirect.com/science/article/abs/pii/S1063520320300063?via%3Dihub
 
 4 COPY RIGHT
 

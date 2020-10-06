@@ -1,0 +1,54 @@
+\documentclass{letter}
+
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage[ruled]{algorithm2e}
+\usepackage{float}
+\usepackage{amsmath,amsthm,bm,color,epsfig,enumerate,caption}
+
+\addtolength{\textwidth}{1.6in}
+\addtolength{\oddsidemargin}{-0.8in}
+\addtolength{\textheight}{1.6in}
+\addtolength{\topmargin}{-0.8in}
+
+\name{Haizhao Yang}
+\address{
+Department of Mathematics\\
+National University of Singapore\\
+Level 4, Block S17\\
+10 Lower Kent Ridge Road\\
+Singapore 119076}
+\signature{Haizhao Yang}
+\date{\today}
+
+\begin{document}
+
+%------------------------------
+\begin{letter}{
+Editorial Board\\
+Applied and Computational Harmonic Analysis
+}
+
+\opening{Dear members of the Editorial Board:}
+
+I would like to submit the manuscript entitled
+``Fast Algorithms for the Multi-dimensional Jacobi Polynomial Transform''
+by James Bremer, Qiyuan Pang, and myself to Applied and Computational Harmonic Analysis.
+
+
+We use the well-known observation that the solutions of Jacobi's differential 
+equation can be represented via non-oscillatory phase and amplitude functions to develop 
+ a fast algorithm for computing multi-dimensional Jacobi polynomial transforms.
+More explicitly,  it  follows from this observation that the matrix corresponding to the 
+discrete Jacobi transform is the Hadamard product of a 
+numerically low-rank matrix and a multi-dimensional discrete Fourier transform (DFT) matrix.
+The application of the Hadamard product can 
+be carried out via $O(1)$ fast Fourier transforms (FFTs), resulting in a nearly optimal algorithm to compute the multidimensional Jacobi polynomial transform. 
+
+Thank you very much for your attention and please let me know if
+there is anything else I can help with.
+
+\closing{With best regards,}
+
+\end{letter}
+\end{document}

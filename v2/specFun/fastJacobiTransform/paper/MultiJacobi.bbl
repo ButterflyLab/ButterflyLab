@@ -1,0 +1,269 @@
+\begin{thebibliography}{10}
+
+\bibitem{doi:10.1137/1.9781611970470}
+Richard Askey.
+\newblock {\em Orthogonal Polynomials and Special Functions}.
+\newblock Society for Industrial and Applied Mathematics, 1975.
+
+\bibitem{szeg1939orthogonal}
+Gabor Szeg.
+\newblock {\em Orthogonal polynomials}, volume~23.
+\newblock American Mathematical Soc., 1939.
+
+\bibitem{timan1994theory}
+Aleksandr~Filippovich Timan.
+\newblock {\em Theory of Approximation of Functions of a Real Variable}.
+\newblock Dover books on advanced mathematics. Dover Publications, 1994.
+
+\bibitem{boyd2001chebyshev}
+John~P. Boyd.
+\newblock {\em Chebyshev and Fourier Spectral Methods: Second Revised Edition}.
+\newblock Dover Books on Mathematics. Dover Publications, 2001.
+
+\bibitem{Canuto2006}
+Claudio Canuto, M.~Yousuff Hussaini, Alfio Quarteroni, and Thomas~A. Zang.
+\newblock {\em Spectral Methods: Fundamentals in Single Domains}, pages 3--37.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2006.
+
+\bibitem{funaro1992polynomial}
+Daniele Funaro.
+\newblock {\em Polynomial Approximation of Differential Equations}.
+\newblock Number v. 8 in Lecture notes in physics: Monographs. Springer-Verlag,
+  1992.
+
+\bibitem{doi:10.1137/1.9781611970425}
+David Gottlieb and Steven~A. Orszag.
+\newblock {\em Numerical Analysis of Spectral Methods}.
+\newblock Society for Industrial and Applied Mathematics, 1977.
+
+\bibitem{doi:10.1142/3662}
+Guo Ben-Yu.
+\newblock {\em Spectral Methods and Their Applications}.
+\newblock WORLD SCIENTIFIC, 1998.
+
+\bibitem{chebfun1d}
+Zachary Battles and Lloyd~N. Trefethen.
+\newblock An extension of matlab to continuous functions and operators.
+\newblock {\em SIAM Journal on Scientific Computing}, 25(5):1743--1770, 2004.
+
+\bibitem{chebfun2d}
+Alex Townsend and Lloyd~N. Trefethen.
+\newblock {An Extension of Chebfun to Two Dimensions}.
+\newblock {\em SIAM Journal on Scientific Computing}, 35(6):C495--C518, 2013.
+
+\bibitem{chebfun3d}
+Behnam Hashemi and Lloyd~N. Trefethen.
+\newblock {Chebfun in Three Dimensions}.
+\newblock {\em SIAM Journal on Scientific Computing}, 39(5):C341--C363, 2017.
+
+\bibitem{BERNARDI1997209}
+Christine Bernardi and Yvon Maday.
+\newblock {\em Spectral methods}, volume~5 of {\em Handbook of Numerical
+  Analysis}.
+\newblock Elsevier, 1997.
+
+\bibitem{BENYU1998180}
+Guo Ben-Yu.
+\newblock {Gegenbauer Approximation and Its Applications to Differential
+  Equations on the Whole Line}.
+\newblock {\em Journal of Mathematical Analysis and Applications}, 226(1):180
+  -- 206, 1998.
+
+\bibitem{GUO2000373}
+Ben-Yu Guo.
+\newblock {Jacobi Approximations in Certain Hilbert Spaces and Their
+  Applications to Singular Differential Equations}.
+\newblock {\em Journal of Mathematical Analysis and Applications}, 243(2):373
+  -- 408, 2000.
+
+\bibitem{10.2307/43692835}
+Ben-Yu Guo.
+\newblock Jacobi spectral approximations to differential equations on the half
+  line.
+\newblock {\em Journal of Computational Mathematics}, 18(1):95--112, 2000.
+
+\bibitem{Guo}
+Ivo Babu{\v{s}}ka and Benqi Guo.
+\newblock Optimal estimates for lower and upper bounds of approximation errors
+  in the p-version of the finite element method in two dimensions.
+\newblock {\em Numerische Mathematik}, 85(2):219--255, Apr 2000.
+
+\bibitem{doi:10.1137/S0036142901356551}
+Ivo Babu{\v{s}}ka and Benqi Guo.
+\newblock {Direct and Inverse Approximation Theorems for the p-Version of the
+  Finite Element Method in the Framework of Weighted Besov Spaces. Part I:
+  Approximability of Functions in the Weighted Besov Spaces}.
+\newblock {\em SIAM Journal on Numerical Analysis}, 39(5):1512--1538, 2002.
+
+\bibitem{GUO2013122}
+Benqi Guo and Ivo Babu{\v{s}}ka.
+\newblock {Direct and inverse approximation theorems for the p-version of the
+  finite element method in the framework of weighted Besov spaces, Part III:
+  Inverse approximation theorems}.
+\newblock {\em Journal of Approximation Theory}, 173:122 -- 157, 2013.
+
+\bibitem{GUO20091011}
+Ben-Yu Guo, Jie Shen, and Li-Lian Wang.
+\newblock Generalized jacobi polynomials/functions and their applications.
+\newblock {\em Applied Numerical Mathematics}, 59(5):1011 -- 1028, 2009.
+
+\bibitem{Iserles2011}
+Arieh Iserles.
+\newblock A fast and simple algorithm for the computation of {L}egendre
+  coefficients.
+\newblock {\em Numerische Mathematik}, 117(3):529--553, Mar 2011.
+
+\bibitem{hale2014fast}
+Nicholas Hale and Alex Townsend.
+\newblock A fast, simple, and stable {C}hebyshev--{L}egendre transform using an
+  asymptotic formula.
+\newblock {\em SIAM Journal on Scientific Computing}, 36(1):A148--A167, 2014.
+
+\bibitem{alpert1991fast}
+Bradley~K Alpert and Vladimir Rokhlin.
+\newblock A fast algorithm for the evaluation of {L}egendre expansions.
+\newblock {\em SIAM Journal on Scientific and Statistical Computing},
+  12(1):158--179, 1991.
+
+\bibitem{Rokhlin1}
+Vladimir Rokhlin.
+\newblock A fast algorithm for the evaluation of {L}egendre expansions.
+\newblock {\em SIAM Journal on Sci. and Stat. Computing}, 12:158--179, 1991.
+
+\bibitem{Keiner2}
+Jens Keiner.
+\newblock {\em Fast Polynomial Transforms}.
+\newblock Logos Verlag, 2011.
+
+\bibitem{askey1975orthogonal}
+Richard Askey.
+\newblock {\em Orthogonal polynomials and special functions}, volume~21.
+\newblock Siam, 1975.
+
+\bibitem{andrews1999special}
+George~E Andrews, Richard Askey, and Ranjan Roy.
+\newblock Special functions, volume 71 of encyclopedia of mathematics and its
+  applications, 1999.
+
+\bibitem{Maroni2008}
+P.~Maroni and Z.~da~Rocha.
+\newblock Connection coefficients between orthogonal polynomials and the
+  canonical sequence: an approach based on symbolic computation.
+\newblock {\em Numerical Algorithms}, 47(3):291--314, Mar 2008.
+
+\bibitem{hua1963harmonic}
+Luogeng Hua.
+\newblock {\em Harmonic analysis of functions of several complex variables in
+  the classical domains}.
+\newblock Number~6. American Mathematical Soc., 1963.
+
+\bibitem{91376860}
+Alex Townsend, Marcus Webb, and Sheehan Olver.
+\newblock Fast polynomial transforms based on toeplitz and hankel matrices.
+\newblock {\em Mathematics of Computation}, 87(312):1913--1934, 2017.
+
+\bibitem{61979980}
+Richard~Mikaël Slevinsky.
+\newblock On the use of hahn’s asymptotic formula and stabilized recurrence
+  for a fast, simple and stable chebyshev–jacobi transform.
+\newblock {\em IMA Journal of Numerical Analysis}, 38(1):102--124, 2018.
+
+\bibitem{206962923}
+Jie Shen, Yingwei Wang, and Jianlin Xia.
+\newblock {Fast structured Jacobi-Jacobi transforms}.
+\newblock {\em Mathematics of Computation}, 88(318):1743--1772, 2018.
+
+\bibitem{Greengard}
+Leslie Greengard and June-Yub Lee.
+\newblock Accelerating the nonuniform fast {F}ourier transform.
+\newblock {\em SIAM Review}, 46(3):443--454, 2004.
+
+\bibitem{Townsend}
+Diego Ruiz-Antol{\'i}n and Alex Townsend.
+\newblock A nonuniform fast {F}ourier transform based on low rank
+  approximation.
+\newblock {\em SIAM Journal on Scientific Computing}, 40(1):A529--A547, 2018.
+
+\bibitem{greengard1987fast}
+Leslie Greengard and Vladimir Rokhlin.
+\newblock A fast algorithm for particle simulations.
+\newblock {\em Journal of computational physics}, 73(2):325--348, 1987.
+
+\bibitem{keiner2009computing}
+Jens Keiner.
+\newblock Computing with expansions in {G}egenbauer polynomials.
+\newblock {\em SIAM Journal on Scientific Computing}, 31(3):2151--2171, 2009.
+
+\bibitem{gemignani2010matrix}
+Raf Vandebril, Marc Van~Barel, and Nicola Mastronardi.
+\newblock {\em Matrix Computations and Semiseparable Matrices}.
+\newblock The Johns Hopkins University Press, Baltimore, MD, 2008.
+
+\bibitem{keiner2008gegenbauer}
+Jens Keiner.
+\newblock {G}egenbauer polynomials and semiseparable matrices.
+\newblock {\em Electronic Transactions on Numerical Analysis}, 30:26--53, 2008.
+
+\bibitem{Oneil-Rokhlin}
+Michael O’Neil, Franco Woolfe, and Vladimir Rokhlin.
+\newblock An algorithm for the rapid evaluation of special function transforms.
+\newblock {\em Applied and Computational Harmonic Analysis}, 28:203--226, 2010.
+
+\bibitem{1998MaCom..67.1577P}
+D.~{Potts}, G.~{Steidl}, and M.~{Tasche}.
+\newblock {Fast algorithms for discrete polynomial transforms}.
+\newblock {\em Mathematics of Computation}, 67:1577--1590, October 1998.
+
+\bibitem{Jacobi}
+James Bremer and Haizhao Yang.
+\newblock {Fast algorithms for Jacobi expansions via nonoscillatory phase
+  functions}.
+\newblock {\em IMA Journal of Numerical Analysis}, 04 2019.
+
+\bibitem{DLMF}
+{\it NIST Digital Library of Mathematical Functions}.
+\newblock http://dlmf.nist.gov/, Release 1.0.13 of 2016-09-16.
+\newblock F.~W.~J. Olver, A.~B. {Olde Daalhuis}, D.~W. Lozier, B.~I. Schneider,
+  R.~F. Boisvert, C.~W. Clark, B.~R. Miller and B.~V. Saunders, eds.
+
+\bibitem{HEITMAN20151}
+Zhu Heitman, James Bremer, and Vladimir Rokhlin.
+\newblock On the existence of nonoscillatory phase functions for second order
+  ordinary differential equations in the high-frequency regime.
+\newblock {\em Journal of Computational Physics}, 290:1 -- 27, 2015.
+
+\bibitem{BremerKummer}
+James Bremer.
+\newblock On the numerical solution of second order differential equations in
+  the high-frequency regime.
+\newblock {\em Applied and Computational Harmonic Analysis}, 44:312--349, 2018.
+
+\bibitem{Candes-Demanet-Ying}
+Emmanuel Cand{\`e}s, Laurent Demanet, and Lexing Ying.
+\newblock Fast computation of {F}ourier integral operators.
+\newblock {\em SIAM Journal on Scientific Computing}, 29(6):2464--2493, 2007.
+
+\bibitem{yang2018unified}
+Haizhao Yang.
+\newblock A unified framework for oscillatory integral transforms: When to use
+  nufft or butterfly factorization?
+\newblock {\em J. Comput. Physics}, 388:103--122, 2018.
+
+\bibitem{engquist2009}
+Bj{\"o}rn Engquist and Lexing Ying.
+\newblock A fast directional algorithm for high frequency acoustic scattering
+  in two dimensions.
+\newblock {\em Commun. Math. Sci.}, 7(2):327--345, 06 2009.
+
+\bibitem{subCUR}
+Jiawei Chiu and Laurent Demanet.
+\newblock Sublinear randomized algorithms for skeleton decompositions.
+\newblock {\em SIAM Journal on Matrix Analysis and Applications},
+  34(3):1361--1383, 2013.
+
+\bibitem{Trefethen}
+Lloyd~N. Trefethen.
+\newblock {\em Approximation Theory and Approximation Practice}.
+\newblock Society for Industrial and Applied Mathematics, 2013.
+
+\end{thebibliography}
